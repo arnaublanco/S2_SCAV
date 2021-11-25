@@ -80,9 +80,9 @@ class S2:
              '-t', ending, 'bbb_mp3.mp3'])
         subprocess.call(
             ['ffmpeg', '-ss', start, '-i', 'bbb.mp4', '-vn', '-acodec', 'aac',
-             '-aac_coder', 'twoloop', '-t', ending, 'bbb_aac.aac'])
+             '-t', ending, 'bbb_aac.aac'])
         subprocess.call(
-            "ffmpeg -i cut_bbb.mp4 -i bbb_aac.aac -i bbb_mp3.mp3 -map 0:v -map 0:a -map 1:a bbb_container.mp4",
+            "ffmpeg -i cut_bbb.mp4 -i bbb_aac.aac -i bbb_mp3.mp3 -map 0:v -map 1:a -map 2:a bbb_container.mp4",
             shell=True)
 
     def exercise3(self):
@@ -141,7 +141,7 @@ class S2:
     def run(self):
         os.chdir('video')
         tprint("Welcome Javi!")
-        print("Welcome to Lab 3 of the Audio and Video Encoding Systems.")
+        print("Welcome to S2 of the Audio and Video Encoding Systems.")
 
         while(1):
             print('------------------------------------------')
